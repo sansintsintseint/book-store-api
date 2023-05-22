@@ -1,0 +1,35 @@
+2023-05-08 11:29:47 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CATEGORY" not found (this database is empty); SQL statement:
+insert into category (id, name) values (default, ?) [42104-214]
+2023-05-08 11:49:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table [*]if not exits category( id identity not null, name varchar(255) not null, )"; expected "identifier"; SQL statement:
+create table if not exits category( id identity not null, name varchar(255) not null, ) [42001-214]
+2023-05-08 11:50:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table [*]if not exits category( id identity not null, name varchar(255) not null, )"; expected "identifier"; SQL statement:
+create table if not exits category( id identity not null, name varchar(255) not null, ) [42001-214]
+2023-05-08 11:51:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table [*]if not exits category( id identity not null, name varchar(255) not null )"; expected "identifier"; SQL statement:
+create table if not exits category( id identity not null, name varchar(255) not null ) [42001-214]
+2023-05-08 11:51:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table [*]if not exits category( id identity not null, name varchar(255) not null )"; expected "identifier"; SQL statement:
+create table if not exits category( id identity not null, name varchar(255) not null ) [42001-214]
+2023-05-08 11:53:08 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table [*]if not exits category( id identity not null, name varchar(255) not null )"; expected "identifier"; SQL statement:
+create table if not exits category( id identity not null, name varchar(255) not null ) [42001-214]
+2023-05-08 11:53:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table if not exists book( id identity not null, title varchar(255) not null, price double not null, year_published date not null, publisher varchar(255) not null, image_url varchar(255) not null, author_name varchar(255) not null, category_id bigint not null, constraint fk[*]-category foreign key(category_id) references category(id) )"; expected "., COMMENT, PRIMARY, UNIQUE, FOREIGN, CHECK"; SQL statement:
+create table if not exists book( id identity not null, title varchar(255) not null, price double not null, year_published date not null, publisher varchar(255) not null, image_url varchar(255) not null, author_name varchar(255) not null, category_id bigint not null, constraint fk-category foreign key(category_id) references category(id) ) [42001-214]
+2023-05-08 11:55:29 database: wrong user or password; user: "SA"
+org.h2.message.DbException: Wrong user name or password [28000-214]
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.engine.Engine.openSession(Engine.java:154)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.server.TcpServerThread.run(TcpServerThread.java:175)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Wrong user name or password [28000-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:510)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 8 more
